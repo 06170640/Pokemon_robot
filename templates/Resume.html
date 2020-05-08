@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="utf-8" />
+		<title>G08-陳惠琳.html </title>
+	{%load static%}
+	<link href="{% static "css/style.css" %}" rel="stylesheet" type="text/css" />
+	<style>
+		/*背景*/
+		
+      body{
+                  margin:0px;
+                  padding:0px;
+                  background:#fff url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2c815494-8994-4b70-a398-4993c60ad19e/daflq3s-5ba0b756-61fc-4208-b24e-072222d830e5.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzJjODE1NDk0LTg5OTQtNGI3MC1hMzk4LTQ5OTNjNjBhZDE5ZVwvZGFmbHEzcy01YmEwYjc1Ni02MWZjLTQyMDgtYjI0ZS0wNzIyMjJkODMwZTUucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.6yeRTJKHGXXXVczJzZW-jiSd8XbzdIMrTaudm03jPSM) center fixed  ;
+                  background-size: 100% auto ; 
+				  width:auto;
+                  height:90%;
+                  text-align:center;
+                  line-height:40px;
+                  font-size:32px;
+                  color:black;
+                  font-weight:bold;
+                  
+                     }
+ 
+ 
+
+		
+
+        /*頭像*/
+            P1{
+               position:fixed;
+               top:22%;
+               left:15%;
+               margin-top:-100px;
+               margin-left:-200px;
+               background:src="./Pikachu.png" ;
+               z-index: 50
+		}
+            P2{
+                position:fixed;
+                top:22%;
+                left:100%;
+                margin-top:-100px;
+                margin-left:200px;
+                background-size: 50% auto ;
+                z-index: 10
+                 }
+            P3{
+                position:fixed;
+                top:45%;
+                left:40%;
+                margin-top:-100px;
+                margin-left:-200px;
+                background-size: 50% auto ;
+                z-index: 10
+                 }
+		     	 
+		     	 
+            P4{
+                position:fixed;
+                top:20%;
+                left:100%;
+                margin-top:-100px;
+                margin-left:-200px;
+                background-size: 50% auto ;
+                z-index: 50
+                 }
+				 
+
+	        
+		     /*隱藏顯示按鈕*/	
+		     	ul {
+		     		list-style: none;
+		     		margin: 50px auto;
+		     		display: inline-block;
+		     		margin-left: 100px;
+		     	}
+		     	
+		     	ul li {
+		     		display: inline-block;
+		     		float: left;
+		     	}
+		     				
+	        
+		     	 
+		     	.img {
+		     		cursor: pointer;
+		     	         }
+		     	
+		     	input[type="radio"] {
+ 		     		display: none;
+		     	         }
+		     	
+		     	.cont {
+		     		display: none;
+		     	         }
+		     	
+		     	input[type="radio"]:checked+.cont {
+		     		display: block;
+		     	          }
+                         }
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+/*抖動程式碼*/		
+<style type="text/css">
+     * { padding:0; margin:0;}
+         #box li { position:relative; display:inline-block;/**display:inline; zoom:1; margin:10px; width:100px; height:100px; background:#080;*/ }
+</style>
+<script type="text/javascript">
+? ?    window.onload = function(){
+?        var obj = document.getElementById("box"),
+? ? ?        oLi = obj.getElementsByTagName("li"),
+? ?          len = oLi.length,
+? ?          timer = null,
+? ?          iNow = 3/*晃動範圍，數字越大面積越大*/;
+??
+?         for(var i = len;i--;){
+? ?    oLi[i].onmouseover = function(){
+? ?           shade(this);
+? ?                       }?
+? ? ? oLi[i].onmouseout = function(){
+? ?         clearInterval(timer);
+? ?             this.style.right = 0;
+? ?             this.style.top = 0;
+?                       ?}?
+?                             };
+??
+?       function shade(el){
+? ? ?       clearInterval(timer);
+? ? ?       timer = setInterval(function(){
+? ? ?       el.style.left = iNow+"px";
+? ? ?       el.style.top = iNow+"px";
+? ? ?       iNow = -iNow;
+? ? ?                                     },100/*搖動頻率*/)
+?                               }
+? ? ??
+?}
+?
+</script>
+
+	<script>
+		/*時鐘*/
+	
+	        //獲取時間函數
+       function time1(){
+            var today = new Date();
+            var year = today.getFullYear();
+            var month = today.getMonth()+1;
+            var day = today.getDay();
+            var hour = today.getHours();
+            var minute = today.getMinutes();
+            var second = today.getSeconds();
+
+            minute = checkTime(minute);
+            second = checkTime(second);
+
+            document.getElementById("time").innerHTML =
+                year+"年"+month+"月"+day+"日 "+hour+":"+minute+":"+second;
+            t = setTimeout("time1()",500);
+        }
+        //調整時間格式
+        function checkTime(i) {
+            if(i<10){
+                i="0"+i;
+            }
+            return i;
+        }
+    </script>
+	
+    <style>
+        p.clock{border-width:20px r-style:solid;border-width:12px 12px 12px 12px;padding:5px;; 
+			    position: fixed; top: 50%; right:40%; 
+			    border-style: outset;background-color: #FFFF82;
+		        border-radius: 50px}
+    </style>	
+
+</head>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+    </style>
+	</head>
+
+	
+<body>
+	   <!--頭像-->
+         <div style="position:relative;">
+               <img src="{% static "images/image/Pikachu.png"  %}"  style="width:200px;height:200px position:absolute; z-index:2;" /><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#FFFFFF" face="monospace"><b>陳惠琳(A-GEN)</b></font>
+               
+                
+                        
+</div>
+       <!--          與上邊界距離           -->
+               
+                
+                        
+</div>
+  <!--顯示按鈕圖示-->
+<div class="wrapper">
+		<ul >
+			<center>
+			<li><label for="cont_01"><img src="{% static "images/image/personal.png" %}" width="70"  class="img" title="基本資料" id="img_01"/></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+			<li><label for="cont_02"><img src="{% static "images/image/Love.png" %}" width="70" class="img"  title="服務學習" id="img_02"/></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+			<li><label for="cont_03"><img src="{% static "images/image/honor.png" %}" width="73" class="img"  title="榮譽事蹟" id="img_03"/></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+			<!--<li><label for="cont_04"><img src"{% static "/images/image/photo.png" width="70" class="img"  title="影片播放" id="img_04"/></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>-->
+			<li><label for="cont_05"><img src="{% static "images/image/photo.png" %}"width="75" class="img"  title="照片精選" id="img_05"/></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+			<!--<li><label for="cont_06"><img src"{% static "/images/image/clock .png" width="75" class="img"  title="時間" id="img_06"/></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>-->
+			<!--<li><label for="cont_07"><img src"{% static "/images/image//Code.png" width="72" class="img"  title="程式介紹"     id="img_07"/></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>-->
+
+	    </ul>
+	  <!--顯示出的表格-->	
+        <!--表格1-->
+		<input type="radio" name="cont" id="cont_01"/>
+		      <div class="cont">
+                  <center> <table width="800" style="border:25px #E1E1E1 solid; padding:20px; margin:5px 5px 5px 5px;"  cellpadding='20'> 
+                                                  <!--border:"數字" 框的寬度   
+                                                      margin:上 右 下 左;         
+                                                      cellpadding 屬性可用來設計表格欄位內元素與邊框間的距離
+													              屬性用來定義一個區域（例如 DIV 或 span）的外邊界距離，俗稱外距;
+                                                      rules="all"   沒有線條。
+                                                            groups	位於行組和列組之間的線條。
+                                                            rows	位於行之間的線條。
+                                                            cols	位於列之間的線條。
+                                                            all	    位於行和列之間的線條。-->	
+　                        <tr bgcolor="#d6d6ad">
+　                           <td colspan="2"  style="font-size:6px;align='center'" ></td>   
+　                          <center><font size="9" face="monospace " color="#FFFFFF"> Personal Information 
+　                           </tr> 
+　                                        
+                  　       <tr bgcolor="#F5F5F5">
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle; font-size:20px;"><font color="#000000"> 姓名</font> </td>
+　                           <td style="font-size:16px;"> <font color="midnightblue"> 陳惠林 </font> </td>
+　                           </tr>
+　                           
+　                           <tr bgcolor="white">
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle; font-size:20px;"><font color="#000000"> 居住的縣市</font> </td>
+　                           <td style="font-size:16px;"> <font color="midnightblue"> 桃園市 </font> </td>
+　                           </tr>                  
+
+　                        <tr bgcolor="#F5F5F5">
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle; font-size:20px;"> <font color="#000000">國籍</font> </td>
+　                           <td style="font-size:16px;"> <font color="midnightblue"> 中華民國 </font> </td>
+　                           </tr>
+                             
+　                           <tr bgcolor="white">
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle; font-size:20px;colspan="2> <font color="#000000">休閒興趣</font> </td>
+　                           <td style="font-size:16px;"> <font color="midnightblue"> 看電影、出去玩 </font> </td>
+　                           </tr>
+                             
+　                           <tr bgcolor="#F5F5F5">
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle; font-size:20px;"><font color="#000000"> 個性 </font></td>
+　                           <td style="font-size:16px;"> <font color="midnightblue"> 樂觀、開朗 </font> </td>
+　                           </tr>
+                             
+
+                             
+　                           <tr bgcolor="white">
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle; font-size:20px;">  電子信箱 </td>
+　                           <td style="font-size:16px;"> <font color="midnightblue">a880227a@gmail.com</font> </td>
+　                           </tr>
+                             
+
+                     </center></table>			
+         </div>
+
+        <!--表格2-->	
+		<input type="radio" name="cont" id="cont_02"/>
+		      <div class="cont">                  
+                  <center> <table width="800"   style="border:25px #E1E1E1 solid;  padding:20px; margin:-20px 5px 5px 5px;"  cellpadding='20'"> 
+                                                      <!--border:"數字" 框的寬度    margin:上 右 下 左;         cellpadding 屬性可用來設計表格欄位內元素與邊框間的距離
+													                                屬性用來定義一個區域（例如 DIV 或 span）的外邊界距離，俗稱外距;                          -->	
+　                        <tr bgcolor="	#ffcbb3">
+                          <td colspan="2"  style="font-size:20px;   align='center'" ></td>   
+　                         <center> <font size="9" face="monospace "color="#FFFFFF"> Service
+　                           </tr> 
+　                       
+                         <tr  bgcolor="white">
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle;font-size:20px;"><font color="#000000">學年度</font></td>
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle; font-size:20px;">
+					  <font color="midnightblue">106</td>
+　                          </tr>
+　                       <tr  bgcolor="white">
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle;font-size:20px;"><font color="#000000">服務內容</font></td>
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle;font-size:20px;">
+					  <font color="midnightblue">協助大學個人申請</td>
+　                       </tr>
+　                       
+　                       <tr bgcolor="	#ffcbb3">
+　                           <center> <td colspan="2"  style="font-size:20px; align='center' valign="middle">  </td>
+　                           </tr>
+　                       
+                    <tr  bgcolor="white">
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle;font-size:20px;"><font color="#000000">學年度</font></td>
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle;font-size:20px;">
+								<font color="midnightblue">107</td>
+　                          </tr>
+　                       <tr  bgcolor="white">
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle;font-size:20px;"><font color="#000000">服務內容</font></td>
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle;font-size:20px;">
+								<font color="midnightblue">協助文書處理、活動協助</td>
+　                       </tr>
+　                       
+                    
+
+
+                         </center></table>			
+             </div>
+
+		
+		
+		
+
+      <!--表格3-->
+		<input type="radio" name="cont" id="cont_03"/>
+		      <div class="cont">                                               <!--padding 內距的設定，可以控制區域如 DIV 或 span 的內部距離-->
+                  <center> <table width="1000" style="border:20px #E1E1E1 solid; padding:20px; margin:5px 5px 5px 5px;" cellpadding='20'> 
+                                                  <!--border:"數字" 框的寬度    margin:上 右 下 左;         cellpadding 屬性可用來設計表格欄位內元素與邊框間的距離
+													                                屬性用來定義一個區域（例如 DIV 或 span）的外邊界距離，俗稱外距;    -->
+　                        <tr  bgcolor="#ceffce">
+　                           <td colspan="3"  style="font-size:20px; align='center'"></td>   
+　                          <center><font size="9" face="monospace "color="#FFFFFF">Reward record & MANAGEMENT LEVEL </td>
+　                           </tr>
+　                       
+                         <tr  bgcolor="white">
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle;font-size:20px;"><font color="#000000">獎懲日期</font></td>
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle;font-size:20px;"><font color="#000000">獎懲原因</font></td>
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle;font-size:20px;"><font color="#000000">獎懲種類</font></td>
+　                         
+　                          </tr>
+
+　                       
+　                      <tr  bgcolor="white">
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle;font-size:20px;">
+								<font color="midnightblue">106.12.14</td>
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle;font-size:16px;">
+								<font color="midnightblue">參加校外(內)各種比賽成績優異者</td>
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle;font-size:18px;">
+								<font color="midnightblue">嘉獎2</td>
+　                           
+　                          </tr>
+　                          
+
+　                       <tr  bgcolor="white">
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle;font-size:20px;">
+								<font color="midnightblue">107.12.28</td>
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle;font-size:20px;">
+								<font color="midnightblue">	參加校外(內)比賽<br>表現良好者。</td>
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle;font-size:20px;">
+								<font color="midnightblue">嘉獎1</td>
+　                       </tr>
+　                       
+　                       
+　                        <tr  bgcolor="#ceffce">
+　                           <td colspan="3"  style="font-size:20px; align='center'"></td>  
+                              <font size="6" face="monospace ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+　                           </tr>
+　                           </tr>
+　                       
+　                       
+                    <tr  bgcolor="white">
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle;font-size:20px;"><font color="#000000">學年度</font></td>
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle; font-size:20px;"><font color="#000000">社團名稱</font></td>
+                             <td style="text-align: center; line-height:36px; vertical-align: middle; font-size:20px;"><font color="#000000">職務名稱</font></td>
+                             
+
+　                          </tr>
+　                       <tr  bgcolor="white">
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle;font-size:20px;"><font color="midnightblue">108</td>
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle; font-size:20px;"><font color="midnightblue">桌球社</td>
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle; font-size:20px;"><font color="midnightblue">美宣</td>
+　                       </tr>
+　                       
+　                       
+                         </center></table>			
+         </div>
+
+ <!--影片撥放器-->
+		<input type="radio" name="cont" id="cont_04"/>
+		      <div class="cont">
+			      <center> <font size="6" face="微軟正黑體"> <u> <b> 笑一下 </b> </u> </font> </center> <br>
+				          <iframe width="560" height="315" src="https://www.youtube.com/embed/j_8eiOGvbmw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                          
+                          
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/Ik7Exk0r9R4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <center> <font size="6" face="微軟正黑體"> <u> <b> 華語歌 </b> </u> </font> </center> <br>
+
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/FMl7GEaYwAE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/jU2FQfoTvEg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  
+		      </div>
+                        
+                         
+				  
+
+
+ <!--照片集-->
+		<input type="radio" name="cont" id="cont_05"/>
+		      <div class="cont">
+		          <center><table CLASS="blueTable" 
+								 style="border:25px #E1E1E1 solid; rules="groups" padding:20px; margin:-20px 5px 5px 5px;"  cellpadding='20'>
+                       <tr>
+                       <td> <img src="{% static "images/image/photo1.jpg" %}" width="390" height="300" border="0"> </td>
+                       <td> <img src="{% static "images/image/photo2.jpg" %}" width="390" height="300" border="0"> </td>
+                       <td> <img src="{% static "images/image/photo3.png" %}" width="390" height="300" border="0"> </td>
+                       </tr> 
+                        
+                       <tr>
+                       <td> <img src="{% static "images/image/photo4.jpg" %}" width="390" height="300" border="0"> </td>
+                       <td> <img src="{% static "images/image/photo5.jpg" %}" width="390" height="300" border="0"> </td>
+                       <td> <img src="{% static "images/image/photo6.jpg" %}" width="390" height="300" border="0"> </td>
+                       </tr>
+                 </center> </table>
+		      </div>
+
+<!--時鐘-->
+		<input type="radio" name="cont" id="cont_06"/>
+		      <div class="cont">
+		          
+　                <body>
+
+                  <p id="time" class="clock"><script>time1()</script></p>
+                 </body>
+		      </div>
+
+	</body>
+	
+	<!--程式碼說明-->
+	
+	<input type="radio" name="cont" id="cont_07"/>
+		      <div class="cont">
+                  <center> <table width="800" style="border:25px #E1E1E1 solid; padding:20px; margin:5px 5px 5px 5px;"  cellpadding='20'> 
+                                                  <!--border:"數字" 框的寬度   
+                                                      margin:上 右 下 左;         
+                                                      cellpadding 屬性可用來設計表格欄位內元素與邊框間的距離
+													              屬性用來定義一個區域（例如 DIV 或 span）的外邊界距離，俗稱外距;
+                                                      rules="all"   沒有線條。
+                                                            groups	位於行組和列組之間的線條。
+                                                            rows	位於行之間的線條。
+                                                            cols	位於列之間的線條。
+                                                            all	    位於行和列之間的線條。-->	
+　                        <tr bgcolor="#d6d6ad">
+　                           <td colspan="2"  style="font-size:6px;align='center'" ></td>   
+　                          <center><font size="9" face="monospace "> source code:Introduction
+　                           </tr> 
+　                                        
+                  　       <tr bgcolor="#F5F5F5">
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle; font-size:20px;"> 程式碼</td>
+　                           <td style="font-size:16px;"> <font color="midnightblue"> 語法說明 </font> </td>
+　                           </tr>
+　                           
+　                           <tr bgcolor="white">
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle; font-size:20px;"> 
+                                        BODY<BR>BGCOLOR<BR>TEXT<BR>BACKGROUND</td>
+　                           <td style="font-size:16px;"> <font color="midnightblue"> 文件主體<BR>背景顏色 <BR>背景文字顏色<BR>背景照片</font> </td>
+　                           </tr>                  
+
+　                        <tr bgcolor="#F5F5F5">
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle; font-size:20px;"> 
+                                        TITLE<BR>br<BR>P ALIGN=LEFT、CENTER、RIGHT<BR> center </td>
+　                           <td style="font-size:16px;"> <font color="midnightblue">  網站標題<BR>換下一行<BR>跳段落設定<BR>向中對齊 </font> </td>
+　                           </tr>
+                             
+　                           <tr bgcolor="white">
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle; font-size:20px;colspan="2> 
+                                        FONT:SIZE<BR>FONT: COLOR<BR>FONT: COLOR<BR> center </td>
+　                           <td style="font-size:16px;"> <font color="midnightblue"> 
+                                        設定大小 <BR>設定顏色<BR>設定字型</font> </td>
+　                           </tr>
+                             
+　                           <tr bgcolor="#F5F5F5">
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle; font-size:20px;">
+                                         TABLE<br>BORDER<br>CELLSPACING<br>CELLPADDING<br> HEIGHT<br>WIDTH<br>ALIGN<br>BGCOLOR </td>
+　                           <td style="font-size:16px;"> <font color="midnightblue"> 
+                                         邊線的設定<br>格框線設定<br>框格與內容空隙<br>表格高度 <br>表格寬度 <br>表格位置 <br>背景顏色 </font> </td>
+　                           </tr>
+                             
+
+                             
+　                           <tr bgcolor="white">
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle; font-size:20px;">  
+                                        A HREF=URL<br>A HREF</td>
+　                           <td style="font-size:16px;"> <font color="midnightblue">
+                                        超連結<br>連結到檔案某一段</font> </td>
+　                           </tr>
+
+ 　                           <tr bgcolor="#F5F5F5">
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle; font-size:20px;"> 
+                                         HEIGHT=pixel<br>WIDTH= pixel<br>BORDER=n </td>
+　                           <td style="font-size:16px;"> <font color="midnightblue"> 
+                                        圖形高度<br>圖形寬度<br>圖形邊框</font> </td>
+　                           </tr>
+
+ 　                           <tr bgcolor="#F5F5F5">
+　                           <td style="text-align: center; line-height:36px; vertical-align: middle; font-size:20px;"> 
+                                        img src="圖檔名"  </td>
+　                           <td style="font-size:16px;"> <font color="midnightblue"> 
+                                        插入圖像</font> </td>
+　                           </tr>
+
+
+                             
+　                                             
+
+                     </center></table>			
+         </div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+ <!--返回按鈕-->	
+	
+
+		
+					   
+		<div   class="img-tip"  style="position:absolute;top:15px;left:90%;" > 		 
+      <a href="http://192.168.56.1:8787/files/public_html/%E4%B8%BB%E9%A0%81.html">
+	   
+	   <font size="20" color="#8B4513"> 
+       <!--<input  class="img-group" type="image" title="退出" src="./圖片/關閉.png"   style="width:100;height:100px "  />-->
+
+
+
+</html>
+
+
+</html>
