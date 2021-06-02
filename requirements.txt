@@ -18,7 +18,7 @@ requests==2.22.0
 sqlparse==0.3.0
 toml==0.10.0
 typed-ast==1.4.0
-urllib3==1.25.7
+urllib3==1.26.5
 dj_static==0.0.6
 dj_database_url==0.5.0
 flask
